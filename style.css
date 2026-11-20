@@ -7,11 +7,11 @@ body{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset
 .abs{position:absolute}
 
 /* portrait */
-.par{position:absolute;left:470px;top:165px;width:790px;height:952px;pointer-events:none;z-index:1;transform:translate(calc(var(--mx)*10px),calc(var(--my)*6px));transition:transform .5s var(--ease)}
+.par{container-type:inline-size;position:absolute;left:470px;top:165px;width:790px;height:952px;pointer-events:none;z-index:1;transform:translate(calc(var(--mx)*10px),calc(var(--my)*6px));transition:transform .5s var(--ease)}
 .pos,.greet,.panel,.sq{z-index:5}
 .pv{position:absolute;inset:0}
 .pv img{display:block;width:100%;height:100%}
-.pv .ph{position:absolute;left:8px;top:69px;width:772px;height:772px;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center;font-size:230px;font-weight:500;letter-spacing:-4px}
+.pv .ph{position:absolute;left:1.01%;top:7.25%;width:97.72%;aspect-ratio:1;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center;font-size:29.1cqw;font-weight:500;letter-spacing:-.5cqw}
 .pv.in{animation:pin .9s var(--ease) both}
 .pv.out{animation:pout .28s ease-in both}
 @keyframes pin{from{opacity:0;transform:translate(calc(var(--dx)*140px),70px) scale(.86)}to{opacity:1;transform:none}}
@@ -72,4 +72,29 @@ body{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset
 #prev:active{transform:scale(.92)}
 #prev:focus-visible,#next:focus-visible{outline:4px solid var(--blue);outline-offset:6px}
 
+
+.tabs,.nav{display:contents}
+/* ===== Responsive: phones, tablets and any portrait screen get a real flowing layout ===== */
+@media (max-width:900px),(max-aspect-ratio:1/1){
+ html,body{overflow:auto;height:auto;min-height:100%}
+ #stage{position:relative!important;left:auto!important;top:auto!important;width:100%!important;height:auto!important;min-height:100svh;transform:none!important;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:28px 20px 40px}
+ .greet{position:static;order:1;margin:0;text-align:center;white-space:normal;font-size:clamp(26px,7.4vw,42px);line-height:1.45}
+ .ln{height:auto}
+ .par{position:relative;order:2;left:auto;top:auto;width:min(100%,440px);height:auto;aspect-ratio:790/952;transform:none}
+ .tabs{order:3;display:flex;gap:30px;justify-content:center}
+ .nav{order:4;display:flex;gap:16px;align-items:center;justify-content:center}
+ .pos{position:static;width:110px;gap:10px}
+ .ic,.sq{width:72px;height:72px;border-radius:20px}
+ .ic svg{width:34px;height:34px}
+ .lab{font-size:17px;line-height:24px}
+ .sq,#count,#prev,#next{position:static}
+ #count{font-size:20px}
+ #next svg,#prev svg{width:32px;height:32px}
+ .panel{position:fixed;left:16px;right:16px;top:50%;width:auto;max-height:82vh;overflow:auto;padding:30px 24px 28px;border-radius:26px;transform:translateY(calc(-50% + 24px)) scale(.96)}
+ .panel.show{transform:translateY(-50%)}
+ .panel h2{font-size:22px;padding-right:48px;margin-bottom:10px}
+ .panel p{font-size:16.5px;line-height:1.65}
+ .panel .x{width:40px;height:40px;right:14px;top:14px;font-size:24px}
+ .scrim{position:fixed;inset:0}
+}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition:none!important}.ln span{transform:none}}
