@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hello, I’m Ahmed Saleh</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="stage">
+ <div class="par" id="par"></div>
+
+ <div class="pos" style="left:345px;top:244px;--d:.55s">
+  <div class="fl" style="--f:0s"><button class="ic blue" id="t-summary" aria-label="Summary" aria-expanded="false"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.2" r="3.4"/><path d="M5.6 19.6c.5-3.6 3.2-5.6 6.4-5.6s5.9 2 6.4 5.6"/></svg></button></div>
+  <div class="lab">Summery</div>
+ </div>
+ <div class="pos" style="left:245px;top:454px;--d:.7s">
+  <div class="fl" style="--f:-1.6s"><button class="ic blue" id="t-role" aria-label="Role" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M4 3.5V20h16.5"/><path d="M8 16.5c1.6-1.2 2.4-9 4-9s2.4 9 5.2 9"/></svg></button></div>
+  <div class="lab">Role</div>
+ </div>
+ 
+
+ <h1 class="greet" id="greet"></h1>
+ <div class="scrim" id="scrim"></div>
+ <div class="panel" id="panel" role="region" aria-live="polite"></div>
+
+ <div class="sq" id="count" aria-label="Team member position"></div>
+ <button class="sq" id="prev" aria-label="Previous team member"><svg viewBox="0 0 24 24"><path d="M3.5 9.2h8.6V5.4L20.5 12l-8.4 6.6v-3.8H3.5z"/></svg></button>
+ <button class="sq" id="next" aria-label="Next team member"><svg viewBox="0 0 24 24"><path d="M3.5 9.2h8.6V5.4L20.5 12l-8.4 6.6v-3.8H3.5z"/></svg></button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
